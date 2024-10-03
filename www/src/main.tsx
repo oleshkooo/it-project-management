@@ -1,5 +1,5 @@
 import { App } from '@/app'
-import '@/global.css'
+import '@/index.css'
 import { createRoot } from 'react-dom/client'
 
 const element = document.getElementById('root') as HTMLDivElement

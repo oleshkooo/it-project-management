@@ -8,6 +8,9 @@ async function bootstrap() {
 
     const app = await NestFactory.create(AppModule)
     app.useGlobalPipes(new ValidationPipe())
+    app.enableCors({
+        origin: '*',
+    })
 
     const swaggerConfig = new DocumentBuilder().setTitle('API').setVersion('1.0').build()
     const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig)
