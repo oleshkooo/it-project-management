@@ -8,19 +8,25 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                dir('api') {
+                    sh 'npm install'
+                }
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm run test'
+                dir('api') {
+                    sh 'npm run test'
+                }
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm run build'
+                dir('api') {
+                    sh 'npm run build'
+                }
             }
         }
     }
