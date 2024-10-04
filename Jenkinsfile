@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Change directory') {
             steps {
-                cd /api
+                sh 'cd /api'
             }
         }
 
